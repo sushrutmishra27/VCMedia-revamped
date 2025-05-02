@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Caveat:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: #fff;
+    color: #111;
+  }
+}
+
+@layer components {
+  .section-divider {
+    @apply w-full h-20;
+  }
+
+  .floating-label {
+    @apply absolute px-6 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-transform duration-300 ease-out;
+  }
+
+  .feature-card {
+    @apply relative bg-white rounded-2xl p-8 shadow-soft transition-transform duration-300;
+  }
+
+  .feature-icon {
+    @apply text-4xl mb-4;
+  }
+
+  .feature-desc {
+    @apply text-lg text-gray-800 font-medium;
+  }
+
+  .stat-block {
+    @apply flex flex-col items-center justify-center p-8;
+  }
+
+  .stat-number {
+    @apply text-4xl md:text-5xl font-bold text-[#dfbf8b] mb-2;
+  }
+
+  .stat-label {
+    @apply text-lg text-gray-600;
+  }
+
+  .why-us-card {
+    @apply bg-white rounded-2xl p-8 shadow-soft relative overflow-hidden transition-transform duration-300;
+  }
+
+  .why-us-number {
+    @apply text-6xl font-bold text-gray-100 absolute -top-4 -left-4;
+  }
+
+  .why-us-text {
+    @apply text-xl font-semibold mb-4 relative z-10;
+  }
+
+  .why-us-detail {
+    @apply text-gray-600 relative z-10;
+  }
+
+  .faq-row {
+    @apply border-b border-gray-200 py-6 cursor-pointer transition-colors duration-200;
+  }
+
+  .faq-q {
+    @apply text-lg font-semibold mb-2;
+  }
+
+  .faq-a {
+    @apply text-gray-600;
+  }
+
+  .highlight {
+    @apply text-[#dfbf8b] underline decoration-[#dfbf8b] decoration-[1px] underline-offset-4;
+  }
+
+  .highlight-gold {
+    @apply text-[#dfbf8b];
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+@media (max-width: 700px) {
+  .floating-label {
+    display: none !important;
+  }
+}
+
