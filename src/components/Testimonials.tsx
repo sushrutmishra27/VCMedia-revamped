@@ -59,10 +59,10 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="testimonials-section py-12 overflow-hidden">
-      <div className="container mx-auto px-4 mb-12">
+    <section id="testimonials-section" className="testimonials-section py-8 md:py-12 overflow-hidden">
+      <div className="container mx-auto px-4 mb-8 md:mb-12">
         <motion.h2 
-          className="text-[2.8rem] font-black text-center mb-12 tracking-[1px] text-[#111]"
+          className="text-[2rem] md:text-[2.8rem] font-black text-center mb-8 md:mb-12 tracking-[1px] text-[#111]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -75,31 +75,31 @@ const Testimonials = () => {
       <div className="marquee-container">
         {/* First Row - Moving Right */}
         <div className="relative">
-          <div className="flex gap-8 animate-marquee-right">
+          <div className="flex gap-4 md:gap-8 animate-marquee-right">
             {[...testimonials1, ...testimonials1].map((testimonial, index) => (
               <div
                 key={index}
-                className="testimonial-card bg-white rounded-2xl p-8 shadow-soft border-2 border-[#dfbf8b] min-w-[400px] max-w-[400px] hover:scale-105 hover:-translate-y-1 transition-transform duration-200"
+                className="testimonial-card bg-white rounded-2xl p-4 md:p-8 shadow-soft border-2 border-[#dfbf8b] min-w-[280px] md:min-w-[400px] max-w-[280px] md:max-w-[400px] hover:scale-105 hover:-translate-y-1 transition-transform duration-200"
               >
-                <div className="text-[1.08rem] leading-[1.6] text-[#111] mb-4">{testimonial.text}</div>
-                <div className="font-bold text-[1.18rem] text-[#111]">{testimonial.name}</div>
-                <div className="text-[0.98rem] text-[#444] italic whitespace-pre-line">{testimonial.title}</div>
+                <div className="text-[0.9rem] md:text-[1.08rem] leading-[1.6] text-[#111] mb-4">{testimonial.text}</div>
+                <div className="font-bold text-[1rem] md:text-[1.18rem] text-[#111]">{testimonial.name}</div>
+                <div className="text-[0.8rem] md:text-[0.98rem] text-[#444] italic whitespace-pre-line">{testimonial.title}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Second Row - Moving Left */}
-        <div className="relative mt-8">
-          <div className="flex gap-8 animate-marquee-left">
+        <div className="relative mt-4 md:mt-8">
+          <div className="flex gap-4 md:gap-8 animate-marquee-left">
             {[...testimonials2, ...testimonials2].map((testimonial, index) => (
               <div
                 key={index}
-                className="testimonial-card bg-white rounded-2xl p-8 shadow-soft border-2 border-[#dfbf8b] min-w-[400px] max-w-[400px] hover:scale-105 hover:-translate-y-1 transition-transform duration-200"
+                className="testimonial-card bg-white rounded-2xl p-4 md:p-8 shadow-soft border-2 border-[#dfbf8b] min-w-[280px] md:min-w-[400px] max-w-[280px] md:max-w-[400px] hover:scale-105 hover:-translate-y-1 transition-transform duration-200"
               >
-                <div className="text-[1.08rem] leading-[1.6] text-[#111] mb-4">{testimonial.text}</div>
-                <div className="font-bold text-[1.18rem] text-[#111]">{testimonial.name}</div>
-                <div className="text-[0.98rem] text-[#444] italic whitespace-pre-line">{testimonial.title}</div>
+                <div className="text-[0.9rem] md:text-[1.08rem] leading-[1.6] text-[#111] mb-4">{testimonial.text}</div>
+                <div className="font-bold text-[1rem] md:text-[1.18rem] text-[#111]">{testimonial.name}</div>
+                <div className="text-[0.8rem] md:text-[0.98rem] text-[#444] italic whitespace-pre-line">{testimonial.title}</div>
               </div>
             ))}
           </div>

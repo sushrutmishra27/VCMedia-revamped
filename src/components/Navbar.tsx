@@ -23,13 +23,13 @@ const Navbar = () => {
           <div className="grid grid-cols-[1fr_auto_1fr] items-center py-4">
             <motion.a 
               href="/" 
-              className="flex items-center gap-4 justify-self-start"
+              className="flex items-center gap-2 md:gap-4 justify-self-start"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <img src="/logo.png" alt="VCMedia Labs" className="h-12 w-12 object-contain" />
-              <span className="font-bold text-[1.3rem] tracking-[1px] text-[#111]">VCMedia Labs</span>
+              <img src="/logo.png" alt="VCMedia Labs" className="h-8 w-8 md:h-12 md:w-12 object-contain" />
+              <span className="font-bold text-[1rem] md:text-[1.3rem] tracking-[1px] text-[#111]">VCMedia Labs</span>
             </motion.a>
 
             <div className="hidden md:flex gap-[2.2rem] items-center justify-self-center">
@@ -51,16 +51,17 @@ const Navbar = () => {
               >
                 Book a Call
               </a>
-              <button 
-                className="md:hidden flex flex-col gap-[6px] p-2"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                aria-label="Toggle menu"
-              >
-                <span className={`w-6 h-[2px] bg-[#111] transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-                <span className={`w-6 h-[2px] bg-[#111] transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
-                <span className={`w-6 h-[2px] bg-[#111] transition-transform duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-              </button>
             </div>
+            {/* Hamburger menu absolutely on right for mobile */}
+            <button 
+              className="md:hidden flex flex-col gap-[6px] p-2 absolute right-4 top-1/2 -translate-y-1/2 z-50"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span className={`w-6 h-[2px] bg-[#111] transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`w-6 h-[2px] bg-[#111] transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+              <span className={`w-6 h-[2px] bg-[#111] transition-transform duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+            </button>
           </div>
         </div>
       </nav>
@@ -80,33 +81,33 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="absolute right-0 top-0 bottom-0 w-[280px] bg-white p-6 flex flex-col gap-6"
+              className="absolute right-0 top-0 bottom-0 w-[240px] md:w-[280px] bg-white p-4 md:p-6 flex flex-col gap-4 md:gap-6"
               onClick={e => e.stopPropagation()}
             >
               <a 
                 href="#who-we-are-section" 
-                className="text-lg font-medium text-[#111] hover:text-[#dfbf8b] transition-colors"
+                className="text-base md:text-lg font-medium text-[#111] hover:text-[#dfbf8b] transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </a>
               <a 
                 href="#services-section" 
-                className="text-lg font-medium text-[#111] hover:text-[#dfbf8b] transition-colors"
+                className="text-base md:text-lg font-medium text-[#111] hover:text-[#dfbf8b] transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
               </a>
               <a 
                 href="#testimonials-section" 
-                className="text-lg font-medium text-[#111] hover:text-[#dfbf8b] transition-colors"
+                className="text-base md:text-lg font-medium text-[#111] hover:text-[#dfbf8b] transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Testimonials
               </a>
               <a 
                 href="#book-call-section" 
-                className="text-lg font-medium text-[#111] hover:text-[#dfbf8b] transition-colors"
+                className="text-base md:text-lg font-medium text-[#111] hover:text-[#dfbf8b] transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Book a Call

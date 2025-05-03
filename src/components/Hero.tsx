@@ -10,16 +10,15 @@ const Hero = () => {
       const y = (e.clientY / window.innerHeight - 0.5);
       setMousePosition({ x, y });
     };
-
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   const stats = [
-    { text: '1000+ MQLs generated', color: 'bg-emerald-50/80 text-emerald-600', xRange: 40, yRange: 20, xDir: 1, yDir: 1, style: { left: '3vw', top: '25vh' } },
-    { text: '100M+ impressions', color: 'bg-violet-50/80 text-violet-600', xRange: 40, yRange: 20, xDir: -1, yDir: 1, style: { right: '3vw', top: '30vh' } },
-    { text: '$200K+ pipeline generated', color: 'bg-amber-50/80 text-amber-600', xRange: 30, yRange: 20, xDir: 1, yDir: -1, style: { right: '8vw', bottom: '25vh' } },
-    { text: '17 founder-led brands built', color: 'bg-blue-50/80 text-blue-600', xRange: 30, yRange: 20, xDir: -1, yDir: -1, style: { left: '8vw', bottom: '30vh' } }
+    { text: '1000+ MQLs generated', color: 'bg-emerald-50/80 text-emerald-600', xRange: 40, yRange: 20, xDir: 1, yDir: 1, style: { left: '5vw', top: '22vh', leftMobile: '4vw', topMobile: '18vh' } },
+    { text: '100M+ impressions', color: 'bg-violet-50/80 text-violet-600', xRange: 40, yRange: 20, xDir: -1, yDir: 1, style: { right: '5vw', top: '28vh', rightMobile: '4vw', topMobile: '28vh' } },
+    { text: '$200K+ pipeline generated', color: 'bg-amber-50/80 text-amber-600', xRange: 30, yRange: 20, xDir: 1, yDir: -1, style: { right: '10vw', bottom: '22vh', rightMobile: '8vw', bottomMobile: '18vh' } },
+    { text: '17 founder-led brands built', color: 'bg-blue-50/80 text-blue-600', xRange: 30, yRange: 20, xDir: -1, yDir: -1, style: { left: '10vw', bottom: '28vh', leftMobile: '8vw', bottomMobile: '28vh' } }
   ];
 
   return (
@@ -48,9 +47,9 @@ const Hero = () => {
         }}
       />
 
-      <div className="container mx-auto px-4 flex flex-col items-center justify-center min-h-[50vh] relative z-[2] text-center w-full pt-60 pb-0 mb-0">
+      <div className="container mx-auto px-4 flex flex-col items-center justify-center min-h-[70vh] relative z-[2] text-center w-full pt-8">
         <motion.h1 
-          className="text-[3.2rem] font-semibold mb-2 leading-[1.1] tracking-[-1px] text-[#111] max-w-[1000px] mx-auto"
+          className="text-[1.4rem] xs:text-[1.6rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.3rem] font-semibold mb-4 mt-2 leading-[1.13] tracking-[-1px] text-[#111] mx-auto whitespace-pre-line"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -69,7 +68,7 @@ const Hero = () => {
         </motion.h1>
 
         <motion.p 
-          className="text-[1.3rem] text-[#111] mt-6 mb-10 max-w-[600px]"
+          className="text-[0.95rem] xs:text-[1.05rem] sm:text-[1.1rem] md:text-[1.25rem] text-[#111] mt-3 md:mt-6 mb-6 md:mb-10 max-w-[95vw] sm:max-w-[600px]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -79,7 +78,7 @@ const Hero = () => {
 
         <motion.a
           href="#book-call-section"
-          className="bg-[#dfbf8b] text-[#111] px-11 py-[1.1em] rounded-[10px] font-bold text-[1.25rem] no-underline shadow-[0_2px_12px_rgba(0,0,0,0.07)] transition-colors duration-200 inline-block mt-2 hover:bg-[#e9d6b2]"
+          className="bg-[#dfbf8b] text-[#111] px-6 py-[0.8em] rounded-[8px] font-bold text-[1.05rem] sm:text-[1.15rem] md:text-[1.25rem] no-underline shadow-[0_2px_12px_rgba(0,0,0,0.07)] transition-colors duration-200 inline-block mt-2 hover:bg-[#e9d6b2]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -97,27 +96,28 @@ const Hero = () => {
           <div className="w-[60px] h-0 border-b-2 border-[#111] rotate-[-10deg] translate-y-2 mt-0.5" />
         </motion.div>
 
-        {/* Floating Stats - moved further from text */}
-        {stats.map((stat, index) => (
-          <motion.div
-            key={stat.text}
-            className={`absolute ${stat.color} px-6 py-2 rounded-full`}
-            initial={{ opacity: 0 }}
-            animate={{ 
-              opacity: 1,
-              x: mousePosition.x * stat.xRange * stat.xDir,
-              y: mousePosition.y * stat.yRange * stat.yDir
-            }}
-            transition={{ 
-              opacity: { duration: 0.5, delay: 0.8 + index * 0.2 },
-              x: { type: "spring", stiffness: 50 },
-              y: { type: "spring", stiffness: 50 }
-            }}
-            style={stat.style}
-          >
-            <p className="font-medium text-sm whitespace-nowrap">{stat.text}</p>
-          </motion.div>
-        ))}
+        <div className="hidden lg:block">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={stat.text}
+              className={`absolute ${stat.color} px-6 py-2 rounded-full z-10`}
+              initial={{ opacity: 0 }}
+              animate={{ 
+                opacity: 1,
+                x: mousePosition.x * stat.xRange * stat.xDir,
+                y: mousePosition.y * stat.yRange * stat.yDir
+              }}
+              transition={{ 
+                opacity: { duration: 0.5, delay: 0.8 + index * 0.2 },
+                x: { type: "spring", stiffness: 50 },
+                y: { type: "spring", stiffness: 50 }
+              }}
+              style={stat.style}
+            >
+              <p className="font-medium text-sm whitespace-nowrap">{stat.text}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
