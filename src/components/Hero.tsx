@@ -47,7 +47,7 @@ const Hero = () => {
         }}
       />
 
-      <div className="container mx-auto px-4 flex flex-col items-center justify-center min-h-[70vh] relative z-[2] text-center w-full pt-8">
+      <div className="container mx-auto px-4 flex flex-col items-center justify-center min-h-[70vh] relative z-[2] text-center w-full pt-40">
         <motion.h1 
           className="text-[1.4rem] xs:text-[1.6rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.3rem] font-semibold mb-4 mt-2 leading-[1.13] tracking-[-1px] text-[#111] mx-auto whitespace-pre-line"
           initial={{ opacity: 0, y: 20 }}
