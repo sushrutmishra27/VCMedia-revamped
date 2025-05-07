@@ -24,7 +24,7 @@ const WhoWeAre = () => {
           <div className="lg:w-[420px] max-w-[90vw]">
             <div className="rounded-[18px] overflow-hidden border-[1.5px] border-[#dfbf8b] shadow-[0_2px_12px_rgba(223,191,139,0.10)]">
               <img 
-                src="/photo123.png" 
+                src="/photo123.jpg" 
                 alt="Growth Architects at work" 
                 className="w-full h-auto object-cover"
               />
