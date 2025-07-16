@@ -15,7 +15,7 @@ const BookCall = () => {
         </motion.h2>
         <div className="calendly-embed-container max-w-[63.525rem] mx-auto rounded-xl overflow-hidden shadow-soft border-[1.5px] border-[#dfbf8b]">
           <iframe 
-            src="https://calendly.com/vcmedialabs/30m" 
+            src="https://calendly.com/vcmedialabs/30min" 
             frameBorder="0" 
             allowFullScreen
             className="w-full min-h-[600px] bg-white"
